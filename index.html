@@ -1,0 +1,554 @@
+<html>
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="facescroll.js"></script>
+<script type="text/javascript" src="http://test.dailyobjects.com/js/jquery/jquery-ui.min.js"></script>
+
+<style>
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('fonts/HelveticaNeueFontFamily/helveticaneue.eot'),
+		 url('fonts/HelveticaNeueFontFamily/helveticaneue.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/HelveticaNeueFontFamily/helveticaneue.woff') format('woff'),
+		 url('fonts/HelveticaNeueFontFamily/helveticaneue.svg#helveticaneue') format('svg'),
+		 url('fonts/HelveticaNeueFontFamily/helveticaneue.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+	.hide { display:none;}
+#brand-list-designer #sizelist {
+	min-width: 245px;
+height: auto;
+max-height: 235px;
+overflow-y: scroll;
+overflow-x: hidden;
+margin: 0;
+position: absolute;
+z-index: 500;
+overflow: hidden;
+text-decoration: none;
+background-color: #FFFFFF;
+border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-o-border-radius: 5px;
+-ms-border-radius: 5px;
+box-shadow: 0 0 5px 1px #DDDDDD;
+-webkit-box-shadow: 0 0 5px 1px #DDDDDD;
+-moz-box-shadow: 0 0 5px 1px #DDDDDD;
+-ms-box-shadow: 0 0 5px 1px #DDDDDD;
+-o-box-shadow: 0 0 5px 1px #DDDDDD;
+float: left;
+top: 0;
+padding: 0px 10px 0 10px;
+left: 12px;
+	}
+	#brand-list-designer #sizelist2 {
+	
+	width: 249px;
+	top:0;
+height: auto;
+max-height: 235px;
+overflow-y: scroll;
+overflow-x: hidden;
+margin: 0;
+position: absolute;
+z-index: 500;
+overflow: hidden;
+text-decoration: none;
+background-color: #FFFFFF;
+border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-o-border-radius: 5px;
+-ms-border-radius: 5px;
+box-shadow: 0 0 5px 1px #DDDDDD;
+-webkit-box-shadow: 0 0 5px 1px #DDDDDD;
+-moz-box-shadow: 0 0 5px 1px #DDDDDD;
+-ms-box-shadow: 0 0 5px 1px #DDDDDD;
+-o-box-shadow: 0 0 5px 1px #DDDDDD;
+float: left;
+padding:0px 10px 0 10px;
+left: 12px;
+}
+#brand-list-designer .close:hover {
+background-image: url(close_category_hover.png);
+}
+	#brand-list-designer .title {
+color: #ff7baa;
+background-color: #f9f9f9;
+padding: 9px 0px 6px 7px;
+border-right: 1px solid #e6e6e6;
+position: relative;
+left: 2px;
+font-family: 'HelveticaNeueLight';
+font-size: 13px;
+min-width: 67px;
+display: inline-block;
+margin-right: 2px;
+text-transform: uppercase;
+float: left;
+}
+#brand-list-designer .render li, #brand-list-designer .render1 li { 
+float: left;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+background:#f3f3f3 url(../images/custom-case-design/arrow-down.png) right top no-repeat;
+background-position-x: 99%;
+background-position-y: center;
+border: 1px solid #fff;
+padding: 8px 30px 7px 7px;
+font-size: 0.77778rem;
+-webkit-border-radius: 0px 5px 5px 0;
+border-radius: 0px 5px 5px 0;
+margin: 0;
+cursor: pointer;
+min-width: 151px;
+border-width: 1px 0 0 1px;
+font-family: 'HelveticaNeue';
+}
+#brand-list-designer .render, #brand-list-designer .render1 { 
+float: left;
+border: 1px solid #e6e6e6;
+border-radius: 5px;
+margin: 0px 3px 0px 10px;
+}
+#brand-list-designer .render li a, #brand-list-designer .render1 li a {
+
+height: 14px;
+padding: 12px 0px;
+margin: 0;
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 11px;
+line-height: 14px;
+text-align: left;
+color: #333333;
+text-decoration: none;
+text-transform: uppercase;
+}
+#brand-list-designer .close {
+width: 208px;
+height: 12px;
+padding: 12px 36px 12px 2px;
+margin: 0 0 5px 0;
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 14px;
+line-height: 14px;
+text-align: left;
+color: #333333;
+text-decoration: none;
+text-transform: uppercase;
+border-bottom: 1px solid #CCCCCC;
+background-image: url(../images/custom-case-design/close_category.png);
+background-repeat: no-repeat;
+background-position: 230px 12px;
+cursor: pointer;
+position: relative;
+left: 0px;
+
+}
+#brand-list-designer #sizelist li a {
+width: 246px;
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 12px !important;
+line-height: 12px;
+color: #333333;
+text-align: left;
+text-decoration: none;
+text-transform: uppercase;
+
+padding: 5px 5px;
+}
+#brand-list-designer #sizelist2 a {
+width: 210px;
+/* height: 2px; */
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 12px !important;
+line-height: 12px;
+color: #333333;
+text-align: left;
+text-decoration: none;
+text-transform: uppercase;
+float: left;
+padding: 7px 10px;
+margin-bottom: 5px;
+border: 1px solid #e1e1e1;
+}
+
+#brand-list-designer #sizelist2 li, #brand-list-designer #sizelist li, #brand-list-designer .render li { list-style:none; cursor:pointer;}
+
+#sizelist h4.popular {
+
+width: 240px;
+height: 13px;
+padding: 9px 12px 8px 0px;
+margin: 0px;
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 13px;
+line-height: 13px;
+text-align: left;
+color: #808080;
+text-decoration: none;
+
+}
+#brand-list-designer .show-more {
+width: 240px;
+height: 12px;
+padding: 9px 0px;
+margin: 0px;
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 12px;
+line-height: 12px;
+text-align: left;
+color: #FF7BAC;
+text-decoration: none;
+text-transform: uppercase;
+cursor: pointer;
+background-image: url(../images/custom-case-design/show_models_arrow.png);
+background-repeat: no-repeat;
+background-position: 220px 12px;
+
+}
+#brand-list-designer .home_cfind_dd_line {
+width: 240px;
+margin: 0px 0px;
+height: 1px;
+background-image: url(../images/custom-case-design/dashed-line.png);
+background-repeat: no-repeat;
+
+}
+#brand-list-designer .brand-label {
+padding: 7px 0 0 0;
+border: 1px solid #e0dede;
+line-height: 13px;
+height: 18px !important;
+margin-bottom: 2px;
+margin-top: 5px;
+font-size: 14px !important;
+background:#edebeb url(../images/custom-case-design/plus-icon.png) 163px 8px no-repeat;
+}
+#brand-list-designer .render li a.brand-label {
+	padding: 0px 0 0 0 !important;
+border: 0 !important;
+line-height: 13px;
+height: 18px !important;
+margin-bottom: 5px;
+font-weight:normal !important;
+font-size: 13px !important;
+background:transparent !important;
+}
+#brand-list-designer #sizelist2 li {
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 12px;
+line-height: 14px;
+padding: 6px 10px;
+}
+#brand-list-designer #sizelist li {
+font-family: 'HelveticaNeue';
+font-weight: 300;
+font-size: 12px;
+line-height: 14px;
+padding: 4px 10px;
+}
+#brand-list-designer .brand-sub-list {
+padding: 0 0;
+float: left;
+text-indent: 0px;
+margin: 0;
+width: 100%;
+}
+.brand-sub-list li:hover {background:#f1f1f1;}
+<!--accordion-->
+.accordion {
+  *zoom: 1;
+  margin-bottom: 0;
+  }
+dl.accordion {
+position: relative;
+left: -40px;
+margin-top: 23px;  
+}
+  .accordion:before, .accordion:after {
+    content: " ";
+    display: table; }
+  .accordion:after {
+    clear: both; }
+  .accordion dd {
+    display: block;
+    margin-bottom: 0 !important; }
+    .accordion dd.active > a {
+      background: #e8e8e8; }
+    .accordion dd > a {
+      background: #efefef;
+      color: #222222;
+      padding: 1rem;
+      display: block;
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-size: 1rem; }
+      .accordion dd > a:hover {
+        background: #e3e3e3; }
+  .accordion .content {
+    display: none;
+    }
+    .accordion .content.active {
+      display: block;
+      background: white; }
+
+
+
+meta.foundation-data-attribute-namespace {
+  font-family: false; }
+
+<!--accordion end-->
+.brand-sub-list a {
+position: relative;
+top: 6px;
+width: 215px !important;
+}
+
+#brand-list-designer .popular {
+width: 240px;
+height: 13px !important;
+padding: 3px 12px 5px 0px !important;
+font-family: 'HelveticaNeue' !important;
+font-weight:normal !important;
+font-size: 13px !important;
+line-height: 13px;
+text-align: left;
+color: #808080 !important;
+text-decoration: none;
+
+background:transparent !important;
+border:0 none !important;
+text-transform:none !important;
+}
+
+
+</style>
+</head>
+<body>
+<div id="brand-list-designer" class="product_select_wrap" style="position:relative">
+<div class="render"><span class="title">Devide</span><li>Select</li></div>
+<div class="size-form">
+<div id="sizelist">
+<h2 class="close">select</h2>
+
+	<h4 class="popular">Popular</h4>
+	<ul style="margin:0; padding:0;">
+	  <li cat-id="1">iphone 5</li>
+	  <li cat-id="2">Lumia 520</li>
+	  <li cat-id="3">Moto</li>
+	  <li cat-id="4">Samsung Duos</li>
+	  </ul>
+
+	  <div class="home_cfind_dd_line">&nbsp;</div>
+<h4 class="show-more">Show all 50 models  >></h4>
+</div>
+
+<div id="sizelist2"style="display:none; height:450px; min-width:245px; ">
+	<h2 id="top" class="close">select</h2>
+	<div class="sizelist-sub" style="height:200px;">
+	
+	<a href="#" class="popular">Popular</a>
+	<dl class="accordion" data-accordion>
+  <dd>
+    <a href="#panel1">Apple</a>
+    <div id="panel1" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="5">iPad 2</li>
+		<li cat-id="6">iPad 3</li>
+		<li cat-id="7">iPad 4</li>
+		<li cat-id="8">iPad Air</li>
+		<li cat-id="9">iPad Mini/Retina</li>
+		<li cat-id="10">iPhone 4/4S</li>
+		<li cat-id="11">iPhone 5/5S</li>
+	</ul>
+    </div>
+  </dd>
+  <dd>
+    <a href="#panel2">Nokia</a>
+    <div id="panel2" class="content">
+     <ul class="brand-sub-list">
+		<li cat-id="12">Nokia Lumia 520 </li>
+		<li cat-id="13">Nokia Lumia 625</li>
+		<li cat-id="14">Nokia Lumia 720</li>
+		<li cat-id="15">Nokia Lumia 925 </li>
+		<li cat-id="16">Nokia Lumia 1020</li>
+		<li cat-id="17">Nokia Lumia 620</li>
+		<li cat-id="18">Nokia Lumia 710</li>
+		<li cat-id="19">Nokia Lumia 1520</li>
+	
+	</ul>
+    </div>
+  </dd>
+  <dd>
+    <a href="#panel3">Htc</a>
+    <div id="panel3" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="20">HTC One </li>
+		<li cat-id="21">HTC One Max</li>
+		<li cat-id="22">HTC One X</li>
+		<li cat-id="23">HTC Desire 500 </li>
+		<li cat-id="24">HTC One M8</li>
+	</ul>
+    </div>
+  </dd>
+   <dd>
+    <a href="#panel4">Samsung</a>
+    <div id="panel4" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="25">Samsung Galaxy Note 3 </li>
+		<li cat-id="26">Samsung Galaxy S5</li>
+		<li cat-id="27">Samsung Galaxy S4</li>
+		<li cat-id="28">Samsung Galaxy S3 </li>
+		<li cat-id="29">Galaxy Grand Duos I9082</li>
+		<li cat-id="30">Galaxy Mega 6.3 I9200</li>
+		<li cat-id="31">Galaxy Mega 5.8</li>
+		<li cat-id="32">Galaxy Note 2 N7100</li>
+		<li cat-id="33">Galaxy Note N7000 </li>
+		<li cat-id="34">Galaxy S2 I9100/I9105 Plus</li>
+		<li cat-id="35">Galaxy Win/Quattro I8550</li>
+		<li cat-id="36">Galaxy Grand 2 G7106</li>
+		<li cat-id="37">Galaxy S4 Mini</li>	
+	</ul>
+    </div>
+  </dd>
+   <dd>
+    <a href="#panel5">Sony Xperia</a>
+    <div id="panel5" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="38">Sony Xperia Z1 </li>
+		<li cat-id="39">Sony Xperia Z</li>
+		<li cat-id="40">Sony Xperia M</li>
+		<li cat-id="41">Sony Xperia C </li>
+		<li cat-id="42">Sony Xperia L</li>
+		<li cat-id="43">Sony Xperia S</li>
+		<li cat-id="44">Sony Xperia SL</li>
+		<li cat-id="45">Sony Xperia SP</li>
+		<li cat-id="46">Sony Xperia Z2 </li>
+	</ul>
+    </div>
+  </dd>
+  <dd>
+    <a href="#panel6">Motorola</a>
+    <div id="panel6" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="47">Motorola DEFY ME525 </li>
+		<li cat-id="48">Motorola RAZR Maxx XT910</li>
+		<li cat-id="49">Motorola Moto G</li>
+	</ul>
+    </div>
+  </dd>
+  <dd>
+    <a href="#panel7">Blackberry</a>
+    <div id="panel7" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="50">Blackberry Q10 </li>
+		<li cat-id="51">Blackberry Z1</li>	
+	</ul>
+    </div>
+  </dd>
+  <dd>
+    <a href="#panel8">Nexus</a>
+    <div id="panel8" class="content">
+      <ul class="brand-sub-list">
+		<li cat-id="52">Google Nexus 4 </li>
+		<li cat-id="53">Google Nexus 5</li>
+	</ul>
+    </div>
+  </dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<script>
+$(document).ready(function(){	
+$( "select" ).click(function() {
+  $( "#sizelist" ).hide()
+  $( "#sizelist2" ).hide()
+  $( "#brand-list-designer .render1" ).removeClass('render1').addClass('render');
+});
+
+	$('#brand-list-designer .sizelist-sub > a').addClass('brand-label');
+	$('#brand-list-designer #sizelist').addClass('hide');
+	
+	
+ $("body").on("click", "#brand-list-designer .render1",function(){
+  $('#brand-list-designer #sizelist').hide();
+		$('#brand-list-designer #sizelist2').show();	
+	});
+	
+ $("body").on("click", "#brand-list-designer .popular",function(){
+  $('#brand-list-designer #sizelist').show();
+		$('#brand-list-designer #sizelist2').hide();	
+	});
+	
+
+	$("#brand-list-designer .render").click(function(){
+		$('#brand-list-designer #sizelist').show();
+	});
+   
+	$("#brand-list-designer li").click(function(){
+		$("#brand-list-designer .render li").remove();
+		$("#brand-list-designer .render1 li").remove();
+		$("#brand-list-designer #sizelist").hide();
+		$("#brand-list-designer #sizelist2").hide();
+		$(this).clone().appendTo(".render");
+		$(this).clone().appendTo(".render1");
+		$(this).clone().appendTo("form input");		
+	});
+  
+	$("#brand-list-designer h4.show-more").click(function(){
+		$('#brand-list-designer #sizelist').hide();
+		$('#brand-list-designer #sizelist2').show();	
+		$( "#brand-list-designer .render" ).removeClass('render').addClass('render1');
+	});
+   
+	$("#brand-list-designer .close").click(function(){
+		$('#brand-list-designer #sizelist').hide();
+		$('#brand-list-designer #sizelist2').hide();
+	});
+	
+   $("#brand-list-designer .render1").click(function(){
+		$('#brand-list-designer #sizelist2').show();
+		
+	});
+
+	//WHEN YOU CLICK THE ELEMENT INSIDE THE BODY (THIS WILL HELP YOU IF YOU NEED TO CREATE MORE LI.INLINER ELEMENTS WITH JS, AJAX, OR WHATEVER...
+$('li').on('click',function(){
+//GET THE TEXT INSIDE THAT SPECIFIC LI
+var content= $(this).data('cat-id');
+//PLACE THE TEXT INSIDE THE INPUT FIELD, YOU CAN CHANGE YOUR SELECTOR TO TARGET THE RIGHT INPUT
+
+$("#MySearchBox li:has('a')").prev().remove();
+$('#MySearchBox').val(content);
+//HERE YOU CAN DO SOMETHING ELSE LIKE SIBMITING THE FORM, OR CLICK A BUTTON.. OR SOMETHING ELSE
+  });
+
+
+
+//end of ready function//  
+jQuery('.sizelist-sub').alternateScroll({ 'vertical-bar-class': 'styled-v-bar', 'hide-bars': false, 'mouse-wheel-sensitivity':5 });
+});
+
+
+
+</script>
+  <script src="js/foundation.js"></script>
+	<script src="js/foundation.accordion.js"></script>
+   <script>
+      $(document).foundation();
+    </script>
+
+</body>
+</html>
